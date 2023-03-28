@@ -1,41 +1,64 @@
+.page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+p{
+    font-family: 'Poppins', sans-serif;
+    margin: 0px auto;
+    color: #4E5F60;
+}
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
 }
 
+
 form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    height: 100%;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 20px;
-    padding: 20px;
-    margin: 20px auto;
+    margin: 0px auto;
     width: 300px;
     box-shadow: 2px 2px 4px #ccc;
-    padding: 20px;
-}
+    padding: 15px;
+  }
+  
+  button {
+    background-color: #0473EA;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline;
+    width: 85%;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
 
 input[type="text"]{
     padding: 10px;
-    margin: 10px 0;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-input[type="submit"] {
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border-radius: 4px;
-    cursor: pointer;
+input:focus{
+    border: 3px solid #0473EA;
 }
 
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
+
 .alert {
     color: red;
 }

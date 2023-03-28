@@ -13,7 +13,7 @@ const routes: Routes = [
       import('./contact-det/contact-det.module').then((m) => m.ContactDetModule),
   },
   {
-    path: 'Nom-det',
+    path: 'nom-det',
     loadChildren: () =>
       import('./nom-det/nom-det.module').then((m) => m.NomDetModule),
   },
