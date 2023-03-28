@@ -15,6 +15,7 @@ import { NomDetComponent } from './nom-det/nom-det.component';
 import { LoaderService } from './common/loader/loader.service';
 import { LoaderInterceptor } from './common/interceptors/loader.interceptor';
 import { LoaderComponent } from './common/loader/loader.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LoaderComponent } from './common/loader/loader.component';
     UidComponent,
     NomDetComponent,
     LoaderComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
