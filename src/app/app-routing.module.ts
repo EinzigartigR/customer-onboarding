@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./landing/landing.module').then((m) => m.LandingModule),
+      import('./login/login.module').then((m) => m.LoginModule),
   },
   {
     path: 'contact-det',
