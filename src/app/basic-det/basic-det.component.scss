@@ -11,11 +11,22 @@ p{
     margin: 0px auto;
     color: #4E5F60;
 }
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f4;
+
+.content{
+  width:846px;
+  height:564px;
 }
 
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
 
 form {
     display: flex;
@@ -26,11 +37,15 @@ form {
     border: 1px solid #ccc;
     border-radius: 20px;
     margin: 0px auto;
-    width: 300px;
+    width: 100%;
     box-shadow: 2px 2px 4px #ccc;
     padding: 15px;
   }
 
+label{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+  }
 
 input[type="text"]{
     padding: 10px;
@@ -62,5 +77,4 @@ button:hover{
   box-sizing: border-box;
   text-align: end;
   color: black;
-
 }

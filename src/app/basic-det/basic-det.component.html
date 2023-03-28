@@ -1,8 +1,10 @@
 <div class="page"> 
 <div class="content">
-<p>Basic Details</p>
+<p>Personal Details</p>
 <div class="container">
     <form [formGroup]="basicDetForm" (ngSubmit)="onSubmit()">
+
+    <div class="row">
         <div class="form-group">
             <label for="Firstname">Firstname</label>
             <input type="text" class="form-control" id="firstname" formControlName="firstname">
@@ -20,6 +22,7 @@
                 <div *ngIf="basicDetForm.controls['lastname'].errors?.['required']">Lastname is required</div>
             </div>
         </div>
+    </div>
 
         <div class="form-group">
             <label for="email">Email Address</label>
@@ -30,6 +33,7 @@
             </div>
         </div>
 
+    <div class="row">
         <div class="dropdown">
             <label for="gender">Gender</label>
             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,6 +54,7 @@
                 <div *ngIf="basicDetForm.controls['phone'].errors?.['required']">Phone Number is required</div>
             </div>
         </div>
+    </div>
 
         <div class="form-group">
             <label for="dob">Date Of Birth</label>
