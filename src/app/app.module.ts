@@ -7,12 +7,14 @@ import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // import FormsModule and ReactiveFormsModule
 import { HttpClientModule } from '@angular/common/http';
 import { OtpPageComponent } from './otp-page/otp-page.component';
+import { UpPhotoComponent } from './up-photo/up-photo.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    OtpPageComponent
+    OtpPageComponent,
+    UpPhotoComponent
   ],
   imports: [
     BrowserModule,
