@@ -1,5 +1,6 @@
 <div class="page">
-<p>Basic Details</p>
+<div class="content">
+<p>Nominee Details</p>
 <div class="container">
     <form [formGroup]="nomDetForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -29,14 +30,17 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="dropdown">
             <label for="gender">Gender</label>
-            <input type="text" class="form-control" id="gender" formControlName="gender">
-            <div *ngIf="nomDetForm.controls['gender'].invalid && (nomDetForm.controls['gender'].dirty || nomDetForm.controls['gender'].touched)"
-                class="alert alert-danger">
-                <div *ngIf="nomDetForm.controls['gender'].errors?.['required']">Gender is required</div>
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Gender
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" >Male</a>
+              <a class="dropdown-item" >Female</a>
+              <a class="dropdown-item" >Others</a>
             </div>
-        </div>
+          </div>
 
         <div class="form-group">
             <label for="phone">Phone Number</label>
@@ -49,7 +53,7 @@
 
         <div class="form-group">
             <label for="dob">Date Of Birth</label>
-            <input type="text" class="form-control" id="dob" formControlName="dob">
+            <input type="text" class="form-control" id="dob" formControlName="dob" placeholder="dd/mm/yyyy">
             <div *ngIf="nomDetForm.controls['dob'].invalid && (nomDetForm.controls['dob'].dirty || nomDetForm.controls['dob'].touched)"
                 class="alert alert-danger">
                 <div *ngIf="nomDetForm.controls['dob'].errors?.['required']">Date Of Birth is required</div>
@@ -57,6 +61,8 @@
         </div>
         
         <button type="submit" class="btn btn-primary" [disabled]="!nomDetForm.valid">Next</button>
+        <button type="button" class="btn btn-light">Back</button>
     </form>
+</div>
 </div>
 </div>

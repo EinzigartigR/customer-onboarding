@@ -1,16 +1,21 @@
 <div class="page">
+<div class="content">
 <p>Unique Identification Number</p>
 <div class="container">
     <form [formGroup]="uidForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label for="doctype">Select Document Type</label>
-            <input type="text" class="form-control" id="doctype" formControlName="doctype">
-            <div *ngIf="uidForm.controls['doctype'].invalid && (uidForm.controls['doctype'].dirty || uidForm.controls['doctype'].touched)"
-                class="alert alert-danger">
-                <div *ngIf="uidForm.controls['doctype'].errors?.['required']">Doctype is required</div>
-            </div>
-        </div>
+
         
+        <div class="dropdown">
+            <label for="doctype">Document Type</label>
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Select Doc
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" >Aadhar/Pan Number</a>
+            </div>
+          </div>
+        
+
         <div class="form-group">
             <label for="aadhar">Aadhar Number</label>
             <input type="text" class="form-control" id="aadhar" formControlName="aadhar">
@@ -31,6 +36,9 @@
 
         
         <button type="submit" class="btn btn-primary" [disabled]="!uidForm.valid">Next</button>
+        <button type="button" class="btn btn-light">Back</button>
     </form>
+    
+</div>
 </div>
 </div>
