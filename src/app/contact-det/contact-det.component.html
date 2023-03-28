@@ -1,1 +1,51 @@
-<p>contact-det works!</p>
+<p>Contact Details</p>
+<div class="container">
+    <form [formGroup]="contactDetForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="street">street</label>
+            <input type="text" class="form-control" id="street" formControlName="street">
+            <div *ngIf="contactDetForm.controls['street'].invalid && (contactDetForm.controls['street'].dirty || contactDetForm.controls['street'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="contactDetForm.controls['street'].errors?.['required']">Street Address is required</div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="state">state</label>
+            <input type="text" class="form-control" id="state" formControlName="state">
+            <div *ngIf="contactDetForm.controls['state'].invalid && (contactDetForm.controls['state'].dirty || contactDetForm.controls['state'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="contactDetForm.controls['state'].errors?.['required']">State/Province is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="city">city</label>
+            <input type="text" class="form-control" id="city" formControlName="city">
+            <div *ngIf="contactDetForm.controls['city'].invalid && (contactDetForm.controls['city'].dirty || contactDetForm.controls['city'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="contactDetForm.controls['city'].errors?.['required']">City is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="code">phone</label>
+            <input type="text" class="form-control" id="code" formControlName="code">
+            <div *ngIf="contactDetForm.controls['code'].invalid && (contactDetForm.controls['code'].dirty || contactDetForm.controls['code'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="contactDetForm.controls['code'].errors?.['required']">Area Code is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">phone</label>
+            <input type="text" class="form-control" id="phone" formControlName="phone">
+            <div *ngIf="contactDetForm.controls['phone'].invalid && (contactDetForm.controls['phone'].dirty || contactDetForm.controls['phone'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="contactDetForm.controls['phone'].errors?.['required']">Phone Number is required</div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!contactDetForm.valid">Next</button>
+    </form>
+</div>

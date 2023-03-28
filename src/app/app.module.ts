@@ -11,6 +11,7 @@ import { UpPhotoComponent } from './up-photo/up-photo.component';
 import { BasicDetComponent } from './basic-det/basic-det.component';
 import { ContactDetComponent } from './contact-det/contact-det.component';
 import { UidComponent } from './uid/uid.component';
+import { NomDetComponent } from './nom-det/nom-det.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,10 @@ import { UidComponent } from './uid/uid.component';
     UpPhotoComponent,
     BasicDetComponent,
     ContactDetComponent,
-    UidComponent
+    UidComponent,
+    NomDetComponent,
+    UidComponent,
+
   ],
   imports: [
     BrowserModule,

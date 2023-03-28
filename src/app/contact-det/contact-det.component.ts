@@ -24,11 +24,11 @@ export class ContactDetComponent implements OnInit {
   }
   onSubmit() {
     const payload = {
-      street: this.contactDetForm.value.username,
-      state: this.contactDetForm.value.username,
-      city: this.contactDetForm.value.username,
-      code: this.contactDetForm.value.username,
-      phone: this.contactDetForm.value.username
+      street: this.contactDetForm.value.street,
+      state: this.contactDetForm.value.state,
+      city: this.contactDetForm.value.city,
+      code: this.contactDetForm.value.code,
+      phone: this.contactDetForm.value.phone
   
     }
   }
