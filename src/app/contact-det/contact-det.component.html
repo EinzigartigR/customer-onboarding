@@ -1,5 +1,6 @@
 
 <div class="page">
+<div class="content">
 <p>Contact Details</p>
 <div class="container">
     <form [formGroup]="contactDetForm" (ngSubmit)="onSubmit()">
@@ -47,8 +48,9 @@
                 <div *ngIf="contactDetForm.controls['phone'].errors?.['required']">Phone Number is required</div>
             </div>
         </div>
-
         <button type="submit" class="btn btn-primary" [disabled]="!contactDetForm.valid">Next</button>
+        <button type="button" class="btn btn-light">Back</button>
     </form>
+</div>
 </div>
 </div>
