@@ -23,6 +23,22 @@ export class OtpPageComponent implements OnInit {
   ngOnInit() {
 
   }
+
+  onDigitInput(event: any, digitNumber: number) {
+    const nextDigitField = event.target.nextElementSibling;
+    if (event.target.value) {
+      if (nextDigitField) {
+        nextDigitField.focus();
+      } else {
+        this.onSubmit();
+      }
+    } else if (event.key === 'Backspace') {
+      const previousDigitField = event.target.previousElementSibling;
+      if (previousDigitField) {
+        previousDigitField.focus();
+      }
+    }
+  }
   onSubmit() {
     const payload = {
       digit1: this.otpForm.value.username,
