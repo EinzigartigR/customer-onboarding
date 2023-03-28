@@ -8,6 +8,26 @@ const routes: Routes = [
       import('./login/login.module').then((m) => m.LoginModule),
   },
   {
+    path: 'contact-det',
+    loadChildren: () =>
+      import('./contact-det/contact-det.module').then((m) => m.ContactDetModule),
+  },
+  {
+    path: 'Nom-det',
+    loadChildren: () =>
+      import('./nom-det/nom-det.module').then((m) => m.NomDetModule),
+  },
+  {
+    path: 'uid',
+    loadChildren: () =>
+      import('./uid/uid.module').then((m) => m.UidModule),
+  },
+  {
+    path: 'basic-det',
+    loadChildren: () =>
+      import('./basic-det/basic-det.module').then((m) => m.BasicDetModule),
+  },
+  {
     path: 'otp',
     loadChildren: () =>
       import('./otp-page/otp-page.module').then((m) => m.OtpPageModule),

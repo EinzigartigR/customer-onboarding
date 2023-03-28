@@ -8,13 +8,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // import For
 import { HttpClientModule } from '@angular/common/http';
 import { OtpPageComponent } from './otp-page/otp-page.component';
 import { UpPhotoComponent } from './up-photo/up-photo.component';
+import { BasicDetComponent } from './basic-det/basic-det.component';
+import { ContactDetComponent } from './contact-det/contact-det.component';
+import { UidComponent } from './uid/uid.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     OtpPageComponent,
-    UpPhotoComponent
+    UpPhotoComponent,
+    BasicDetComponent,
+    ContactDetComponent,
+    UidComponent
   ],
   imports: [
     BrowserModule,
