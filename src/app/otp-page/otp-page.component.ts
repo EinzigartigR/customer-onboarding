@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from '../common/services/login.service';
 
 @Component({
   selector: 'app-otp-page',
@@ -10,14 +11,12 @@ import { Router } from '@angular/router';
 
 export class OtpPageComponent implements OnInit {
   otpForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private loginService: LoginService) {
     this.otpForm = this.formBuilder.group({
       digit1: ["", Validators.compose([Validators.required])],
       digit2: ["", Validators.compose([Validators.required])],
       digit3: ["", Validators.compose([Validators.required])],
-      digit4: ["", Validators.compose([Validators.required])],
-      digit5: ["", Validators.compose([Validators.required])],
-      digit6: ["", Validators.compose([Validators.required])]
+      digit4: ["", Validators.compose([Validators.required])]
     });
   }
   ngOnInit() {
@@ -41,13 +40,13 @@ export class OtpPageComponent implements OnInit {
   }
   onSubmit() {
     const payload = {
-      digit1: this.otpForm.value.username,
-      digit2: this.otpForm.value.username,
-      digit3: this.otpForm.value.username,
-      digit4: this.otpForm.value.username,
-      digit5: this.otpForm.value.username,
-      digit6: this.otpForm.value.username
+      otp: this.otpForm.value.digit1 + this.otpForm.value.digit2 + this.otpForm.value.digit3 + this.otpForm.value.digit4,
     }
+    this.loginService.validateOTP(payload).subscribe((res) => {
+      this.router.navigate(['/contact-det']);
+    }, (err) => {
+      console.log(err)
+    })
   }
 
 }

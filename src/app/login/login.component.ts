@@ -19,42 +19,29 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
 
   }
-
+  generateOTP(payload: any) {
+    this.LoginService.generateOTP(payload).subscribe((res) => {
+      this.router.navigate(['/otp'])
+    })
+  }
   onSubmit() {
     const payload = {
       username: this.loginForm.value.username,
       password: this.loginForm.value.password
     }
-    console.log(payload);
-    this.LoginService.login(payload)
-      .subscribe(
-        result => {
-          Swal.fire({
-            toast: true,
-            title: 'You have logged in successfully',
-            icon: 'success',
-            showConfirmButton: false,
-            timer: 3000,
-            position: 'top-right',
-            timerProgressBar: true
-          }).then(() => this.router.navigate(['/otp']))
-        },
-
-        error => {
-          Swal.fire({
-            toast: true,
-            title: 'Your username or password is wrong',
-            icon: 'error',
-            showConfirmButton: false,
-            timer: 3000,
-            position: 'top-right',
-            timerProgressBar: true
-          })
-        },
-        () => {
-          // 'onCompleted' callback.
-          // No errors, route to new page here
-        }
-      );
+    this.LoginService.login(payload).subscribe((res) => {
+      this.generateOTP(payload.username);
+    }, (err) => {
+      Swal.fire({
+        toast: true,
+        title: 'Your username or password is wrong',
+        icon: 'error',
+        showConfirmButton: false,
+        timer: 3000,
+        position: 'top-right',
+        timerProgressBar: true
+      })
+    })
   }
+
 }

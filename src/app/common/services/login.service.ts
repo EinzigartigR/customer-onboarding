@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const SERVER_API = 'https://glowing-sassy-celery.glitch.me/';
-
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -24,7 +23,16 @@ export class LoginService {
             password: credentials.password
         }, httpOptions);
     }
-
+    generateOTP(credentials: any): Observable<any> {
+        return this.http.post(SERVER_API + 'user/generateOTP', {
+            username: credentials,
+        }, httpOptions);
+    }
+    validateOTP(payload: any): Observable<any> {
+        return this.http.post(SERVER_API + 'user/validateOTP', {
+            otp: payload.otp,
+        }, httpOptions);
+    }
     basicDet(credentials: any): Observable<any> {
         return this.http.post(SERVER_API + 'user/basic-det', {
             firstname: credentials.firstname,
@@ -33,7 +41,7 @@ export class LoginService {
             gender: credentials.gender,
             phone: credentials.phone,
             dob: credentials.dob
-        
+
         }, httpOptions);
     }
 
