@@ -13,9 +13,12 @@ export class NomDetComponent implements OnInit {
   nomDetForm: FormGroup;
   constructor(private formBuilder: FormBuilder, private router: Router) {
     this.nomDetForm = this.formBuilder.group({
-      doctype : ["", Validators.compose([Validators.required])],
-      aadhar: ["", Validators.compose([Validators.required])],
-      pan: ["", Validators.compose([Validators.required])]
+      firstname: ["", Validators.compose([Validators.required])],
+      lastname: ["", Validators.compose([Validators.required])],
+      relation: ["", Validators.compose([Validators.required])],
+      gender: ["", Validators.compose([Validators.required])],
+      phone: ["", Validators.compose([Validators.required])],
+      dob: ["", Validators.compose([Validators.required])]
     });
   }
   ngOnInit() {
@@ -23,9 +26,12 @@ export class NomDetComponent implements OnInit {
   }
   onSubmit() {
     const payload = {
-      doctype: this.nomDetForm.value.username,
-      aadhar: this.nomDetForm.value.username,
-      pan: this.nomDetForm.value.username
+      firstname: this.nomDetForm.value.firstname,
+      lastname: this.nomDetForm.value.lastname,
+      relation: this.nomDetForm.value.relation,
+      gender: this.nomDetForm.value.gender,
+      phone: this.nomDetForm.value.phone,
+      dob: this.nomDetForm.value.dob
   
     }
   }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+import { BasicDetService } from '../common/services/login.service';
 
 @Component({
   selector: 'app-basic-det',
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
 
 export class BasicDetComponent implements OnInit {
   basicDetForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private BasicDetService: BasicDetService,private router: Router) {
     this.basicDetForm = this.formBuilder.group({
       firstname: ["", Validators.compose([Validators.required])],
       lastname: ["", Validators.compose([Validators.required])],
@@ -26,13 +28,12 @@ export class BasicDetComponent implements OnInit {
   }
   onSubmit() {
     const payload = {
-      firstname: this.basicDetForm.value.username,
-      lastname: this.basicDetForm.value.username,
-      email: this.basicDetForm.value.username,
-      gender: this.basicDetForm.value.username,
-      phone: this.basicDetForm.value.username,
-      dob: this.basicDetForm.value.username
-  
+      firstname: this.basicDetForm.value.firstname,
+      lastname: this.basicDetForm.value.lastname,
+      email: this.basicDetForm.value.email,
+      gender: this.basicDetForm.value.gender,
+      phone: this.basicDetForm.value.phone,
+      dob: this.basicDetForm.value.dob
     }
   }
 

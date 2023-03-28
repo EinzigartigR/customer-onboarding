@@ -19,4 +19,5 @@ const BasicDetModuleRoute: Routes = [
   ],
   exports: [RouterModule]
 })
+
 export class BasicDetModule { }

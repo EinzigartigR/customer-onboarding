@@ -23,9 +23,9 @@ export class  UidComponent implements OnInit {
   }
   onSubmit() {
     const payload = {
-      doctype: this.uidForm.value.username,
-      aadhar: this.uidForm.value.username,
-      pan: this.uidForm.value.username
+      doctype: this.uidForm.value.doctype,
+      aadhar: this.uidForm.value.aadhar,
+      pan: this.uidForm.value.pan
   
     }
   }

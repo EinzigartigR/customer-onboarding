@@ -1,1 +1,60 @@
-<p>basic-det works!</p>
+<div class="container">
+    <form [formGroup]="basicDetForm" (ngSubmit)="onSubmit()">
+        <h2>Basic Details</h2>
+        <div class="form-group">
+            <label for="Firstname">Firstname</label>
+            <input type="text" class="form-control" id="firstname" formControlName="firstname">
+            <div *ngIf="basicDetForm.controls['firstname'].invalid && (basicDetForm.controls['firstname'].dirty || basicDetForm.controls['firstname'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="basicDetForm.controls['firstname'].errors?.['required']">Firstname is required</div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="lastname">lastname</label>
+            <input type="text" class="form-control" id="lastname" formControlName="lastname">
+            <div *ngIf="basicDetForm.controls['lastname'].invalid && (basicDetForm.controls['lastname'].dirty || basicDetForm.controls['lastname'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="basicDetForm.controls['lastname'].errors?.['required']">Lastname is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">email</label>
+            <input type="text" class="form-control" id="email" formControlName="email">
+            <div *ngIf="basicDetForm.controls['email'].invalid && (basicDetForm.controls['email'].dirty || basicDetForm.controls['email'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="basicDetForm.controls['email'].errors?.['required']">Email is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">gender</label>
+            <input type="text" class="form-control" id="gender" formControlName="gender">
+            <div *ngIf="basicDetForm.controls['gender'].invalid && (basicDetForm.controls['gender'].dirty || basicDetForm.controls['gender'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="basicDetForm.controls['gender'].errors?.['required']">Gender is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">phone</label>
+            <input type="text" class="form-control" id="phone" formControlName="phone">
+            <div *ngIf="basicDetForm.controls['phone'].invalid && (basicDetForm.controls['phone'].dirty || basicDetForm.controls['phone'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="basicDetForm.controls['phone'].errors?.['required']">Phone Number is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">dob</label>
+            <input type="text" class="form-control" id="dob" formControlName="dob">
+            <div *ngIf="basicDetForm.controls['dob'].invalid && (basicDetForm.controls['dob'].dirty || basicDetForm.controls['dob'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="basicDetForm.controls['dob'].errors?.['required']">Date Of Birth is required</div>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" [disabled]="!basicDetForm.valid">Next</button>
+    </form>
+</div>

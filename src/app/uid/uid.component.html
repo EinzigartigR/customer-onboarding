@@ -1,1 +1,34 @@
-<p>uid works!</p>
+<div class="container">
+    <form [formGroup]="uidForm" (ngSubmit)="onSubmit()">
+        <h2>Basic Details</h2>
+        <div class="form-group">
+            <label for="doctype">doctype</label>
+            <input type="text" class="form-control" id="doctype" formControlName="doctype">
+            <div *ngIf="uidForm.controls['doctype'].invalid && (uidForm.controls['doctype'].dirty || uidForm.controls['doctype'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="uidForm.controls['doctype'].errors?.['required']">Doctype is required</div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="aadhar">aadhar</label>
+            <input type="text" class="form-control" id="aadhar" formControlName="aadhar">
+            <div *ngIf="uidForm.controls['aadhar'].invalid && (uidForm.controls['aadhar'].dirty || uidForm.controls['aadhar'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="uidForm.controls['aadhar'].errors?.['required']">Aadhar Number is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="pan">pan</label>
+            <input type="text" class="form-control" id="pan" formControlName="pan">
+            <div *ngIf="uidForm.controls['pan'].invalid && (uidForm.controls['pan'].dirty || uidForm.controls['pan'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="uidForm.controls['pan'].errors?.['required']">Pan Number is required</div>
+            </div>
+        </div>
+
+        
+        <button type="submit" class="btn btn-primary" [disabled]="!uidForm.valid">Next</button>
+    </form>
+</div>
