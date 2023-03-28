@@ -23,13 +23,10 @@ import { NomDetComponent } from './nom-det/nom-det.component';
     ContactDetComponent,
     UidComponent,
     NomDetComponent,
-    UidComponent,
-
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule

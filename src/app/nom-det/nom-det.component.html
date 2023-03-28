@@ -1,6 +1,7 @@
+<div class="page">
+<p>Basic Details</p>
 <div class="container">
     <form [formGroup]="nomDetForm" (ngSubmit)="onSubmit()">
-        <h2>Basic Details</h2>
         <div class="form-group">
             <label for="Firstname">Firstname</label>
             <input type="text" class="form-control" id="firstname" formControlName="firstname">
@@ -11,7 +12,7 @@
         </div>
         
         <div class="form-group">
-            <label for="lastname">lastname</label>
+            <label for="lastname">Lastname</label>
             <input type="text" class="form-control" id="lastname" formControlName="lastname">
             <div *ngIf="nomDetForm.controls['lastname'].invalid && (nomDetForm.controls['lastname'].dirty || nomDetForm.controls['lastname'].touched)"
                 class="alert alert-danger">
@@ -20,7 +21,7 @@
         </div>
 
         <div class="form-group">
-            <label for="relation">relation</label>
+            <label for="relation">Relation</label>
             <input type="text" class="form-control" id="relation" formControlName="relation">
             <div *ngIf="nomDetForm.controls['relation'].invalid && (nomDetForm.controls['relation'].dirty || nomDetForm.controls['relation'].touched)"
                 class="alert alert-danger">
@@ -29,7 +30,7 @@
         </div>
 
         <div class="form-group">
-            <label for="gender">gender</label>
+            <label for="gender">Gender</label>
             <input type="text" class="form-control" id="gender" formControlName="gender">
             <div *ngIf="nomDetForm.controls['gender'].invalid && (nomDetForm.controls['gender'].dirty || nomDetForm.controls['gender'].touched)"
                 class="alert alert-danger">
@@ -38,7 +39,7 @@
         </div>
 
         <div class="form-group">
-            <label for="phone">phone</label>
+            <label for="phone">Phone Number</label>
             <input type="text" class="form-control" id="phone" formControlName="phone">
             <div *ngIf="nomDetForm.controls['phone'].invalid && (nomDetForm.controls['phone'].dirty || nomDetForm.controls['phone'].touched)"
                 class="alert alert-danger">
@@ -47,7 +48,7 @@
         </div>
 
         <div class="form-group">
-            <label for="dob">dob</label>
+            <label for="dob">Date Of Birth</label>
             <input type="text" class="form-control" id="dob" formControlName="dob">
             <div *ngIf="nomDetForm.controls['dob'].invalid && (nomDetForm.controls['dob'].dirty || nomDetForm.controls['dob'].touched)"
                 class="alert alert-danger">
@@ -57,4 +58,5 @@
         
         <button type="submit" class="btn btn-primary" [disabled]="!nomDetForm.valid">Next</button>
     </form>
+</div>
 </div>
