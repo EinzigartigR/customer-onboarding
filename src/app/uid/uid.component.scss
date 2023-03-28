@@ -1,8 +1,9 @@
 .page {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 80px 0px;
   }
 
 p{
@@ -18,8 +19,7 @@ body {
 
 form {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 15px;
     flex-direction: column;
     height: 100%;
     background-color: #fff;
@@ -30,31 +30,37 @@ form {
     box-shadow: 2px 2px 4px #ccc;
     padding: 15px;
   }
-  
-  button {
-    background-color: #0473EA;
-    color: white;
-    border-radius: 8px;
-    padding: 10px 20px;
-    text-align: center;
-    display: inline;
-    width: 85%;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-  
+
 
 input[type="text"]{
     padding: 10px;
-    margin: 0 0 20px 0;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
+button:hover{
+    background-color: #0473EA;
+}
+
 
 .alert {
-    color: red;
+  color: red;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+#dropdownMenuButton{
+  background: transparent;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: end;
+  color: black;
+
 }

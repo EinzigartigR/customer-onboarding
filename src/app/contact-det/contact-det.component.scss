@@ -1,8 +1,9 @@
 .page {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 60px 0px;
   }
 
 p{
@@ -18,9 +19,7 @@ body {
 
 form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    gap: 15px;
     flex-direction: column;
     height: 100%;
     background-color: #fff;
@@ -31,20 +30,7 @@ form {
     box-shadow: 2px 2px 4px #ccc;
     padding: 15px;
   }
-  
-  button {
-    background-color: #0473EA;
-    color: white;
-    border-radius: 8px;
-    padding: 10px 20px;
-    text-align: center;
-    display: inline;
-    width: 85%;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-  
+
 
 input[type="text"]{
     padding: 10px;
@@ -54,11 +40,15 @@ input[type="text"]{
     box-sizing: border-box;
 }
 
-input:focus{
-    border: 3px solid #0473EA;
+button:hover{
+    background-color: #0473EA;
 }
 
 
 .alert {
-    color: red;
+  color: red;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
