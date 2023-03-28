@@ -25,13 +25,6 @@ export class LoginService {
         }, httpOptions);
     }
 
-}
-
-export class BasicDetService {
-    cuurentToken: any;
-
-    constructor(private http: HttpClient) { }
-
     basicDet(credentials: any): Observable<any> {
         return this.http.post(SERVER_API + 'user/basic-det', {
             firstname: credentials.firstname,
@@ -45,3 +38,4 @@ export class BasicDetService {
     }
 
 }
+
