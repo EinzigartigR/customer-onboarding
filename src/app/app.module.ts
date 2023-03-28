@@ -16,6 +16,7 @@ import { LoaderService } from './common/loader/loader.service';
 import { LoaderInterceptor } from './common/interceptors/loader.interceptor';
 import { LoaderComponent } from './common/loader/loader.component';
 import { LandingComponent } from './landing/landing.component';
+import { HeaderComponent } from './common/header/header.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { LandingComponent } from './landing/landing.component';
     NomDetComponent,
     LoaderComponent,
     LandingComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
