@@ -1,14 +1,26 @@
-<p>up-photo works!</p>
+<div class="container">
+    <form> [formGroup]="uploadphotoform" (ngSubmit)="onSubmit()">
+        <h2>Upload Photo</h2>
+        <div class="form-group">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+            <div *ngIf="uploadphotoform.controls['card-img-top'].invalid && (uploadphotoform.controls['card-img-top'].dirty)"
+                class="alert alert-danger">
+                <div *ngIf="uploadphotoform.controls['card-img-top'].errors?.['required']">Upload valid photo</div>
+            </div>
+        </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+        <div class="form-group">
+            <button type="submit" class="btn btn-outline-primary btn-lg" type="submit" >Upload</button>
+            <div *ngIf="uploadphotoform.controls['Upload'].invalid || uploadphotoform.controls['Upload'].touched" 
+                class="alert alert-danger">
+                <div *ngIf="uploadphotoform.controls['Upload'].errors?.['required']">Upload valid photo</div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-outline-primary btn-lg" type="submit" >Upload</button>
+        <button type="search" class="btn btn-link ">Browse</button>
+        <button type="search" class="btn btn-link ">Capture</button>
+        <button type="button" class="btn btn-primary btn-block">Next</button> 
+        <button type="button" class="btn btn-secondary btn-block">Back</button>
+    </form>
+</div>

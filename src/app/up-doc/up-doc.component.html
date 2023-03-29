@@ -1,0 +1,33 @@
+<head>Upload Documents</head>
+<p>Upload your Documents</p>
+<div class="container">
+    <form [formGroup]="upDocForm" (ngSubmit)="onSubmit()">
+        <body>
+        <div class="form-group">
+            <div class="custom-file">
+                <label for="custom-file-input">File</label>
+                <input type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose a file</label>
+              </div>
+
+              <div class="form-group">
+                <label for="document">Select or Scan document:</label>
+                <input type="file" id="document" name="document">
+              </div>
+              
+              <div class="dropdown">
+                <label for="Category">Category</label>
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Choose a Category
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" >Aadhaar</a>
+                  <a class="dropdown-item" >Pan</a>
+                  <a class="dropdown-item" >Other</a>
+                </div>
+              </div>
+
+          </div>
+        </body>
+    </form>
+</div>      
